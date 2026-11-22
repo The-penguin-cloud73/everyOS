@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+import subprocess
+import tkinter as tk
+
+root = tk.Tk()
+root.title("Welcome to everyOS")
+root.geometry("460x320")
+root.configure(bg="#1e1e2e")
+
+tk.Label(
+    root,
+    text="Welcome to everyOS",
+    font=("Sans", 18, "bold"),
+    fg="#cdd6f4",
+    bg="#1e1e2e",
+).pack(pady=15)
+
+tk.Label(
+    root,
+    text="Quick-launch tools for your Bazzite-based system:",
+    fg="#a6adc8",
+    bg="#1e1e2e",
+).pack(pady=5)
+
+actions = [
+    ("Launch Bottles (.exe Runner)", ["flatpak", "run", "com.usebottles.bottles"]),
+    ("Create Windows/macOS VM (quickget)", ["konsole", "-e", "bash", "-c", "quickget; exec bash"]),
+    ("Update everyOS System", ["konsole", "-e", "bash", "-c", "ujust update; exec bash"]),
+]
+
+for label, cmd in actions:
+    tk.Button(root, text=label, width=32, command=lambda c=cmd: subprocess.Popen(c)).pack(pady=6)
+
+root.mainloop()
