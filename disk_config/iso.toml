@@ -1,0 +1,4 @@
+[customizations.installer.kickstart]
+contents = """
+ostreecontainer --url=ghcr.io/the-penguin-cloud73/everyos:latest --no-signature-verification
+"""

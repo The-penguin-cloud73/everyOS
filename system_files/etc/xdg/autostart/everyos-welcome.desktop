@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=everyOS Welcome
+Comment=Quick setup and tools for everyOS
+Exec=/usr/bin/everyos-welcome
+OnlyShowIn=KDE;
